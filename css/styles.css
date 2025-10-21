@@ -1,0 +1,402 @@
+/*
+  ==========================================
+  BASE STYLES & FONT IMPORT
+  ==========================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* A clean blue for primary actions/accents */
+    --secondary-color: #6c757d; /* Muted gray for secondary text */
+    --background-light: #f8f9fa; /* Light background for sections */
+    --background-dark: #343a40; /* Dark background for header/footer */
+    --text-dark: #212529;
+    --text-light: #ffffff;
+    --border-radius: 0.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/*
+  ==========================================
+  UTILITY & COMPONENTS
+  ==========================================
+*/
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    color: var(--text-light); /* Maintain light text color */
+}
+
+section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+/*
+  ==========================================
+  NAVIGATION BAR
+  ==========================================
+*/
+header {
+    background-color: var(--background-dark);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    left: 0;
+    bottom: 0;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after { /* Use .active for the current page */
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--text-light);
+}
+
+/*
+  ==========================================
+  LANDING SECTION (Hero)
+  ==========================================
+*/
+
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+}
+
+.landing-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.landing-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.landing-text h1 span {
+    color: var(--primary-color);
+}
+
+.landing-text p {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.landing-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-image img {
+    /* Placeholder Styling */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+    border: 8px solid var(--background-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/*
+  ==========================================
+  ABOUT SECTION
+  ==========================================
+*/
+.about {
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: var(--text-dark);
+}
+
+/*
+  ==========================================
+  PORTFOLIO SECTION
+  ==========================================
+*/
+.portfolio {
+    padding-bottom: 6rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--text-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    /* Placeholder Styling */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #ced4da; /* Gray background for placeholder */
+}
+
+.project-card h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    padding: 0 1rem 1.5rem;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+
+/*
+  ==========================================
+  CONTACT SECTION (Form)
+  ==========================================
+*/
+.contact-section {
+    background-color: var(--background-light);
+    padding-top: 6rem;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/*
+  ==========================================
+  FOOTER
+  ==========================================
+*/
+
+footer {
+    background-color: var(--background-dark);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: var(--text-light);
+}
+
+.social-links {
+    margin-top: 0.5rem;
+}
+
+/*
+  ==========================================
+  MEDIA QUERIES (Responsiveness)
+  ==========================================
+*/
+
+@media (max-width: 992px) {
+    .landing {
+        flex-direction: column-reverse; /* Stack elements on smaller screens */
+        text-align: center;
+        min-height: unset;
+    }
+
+    .landing-image img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .landing-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .landing-text p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
