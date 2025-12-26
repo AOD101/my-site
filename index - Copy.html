@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abigail O. Doku | Cardiovascular & Metabolic Research</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --teal: #0d9488;
+      --light: #f3f4f6;
+      --bg: #ffffff;
+      --dark: #0f172a;
+      --muted: #6b7280;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f9fafb;
+      color: var(--dark);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(15, 23, 42, 0.9) !important;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .navbar-brand span {
+      font-size: 0.7rem;
+      font-weight: 400;
+      display: block;
+      color: #cbd5f5;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      color: var(--teal) !important;
+    }
+
+    /* Sections base */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-alt {
+      background: var(--light);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-heading h2 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .section-heading h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      margin: 0.8rem auto 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .divider {
+      width: 70px;
+      height: 3px;
+      border-radius: 999px;
+      margin: 0.75rem auto 0;
+      background: linear-gradient(90deg, var(--primary), var(--teal));
+    }
+
+    /* Hero Carousel (Style A: clean, minimal) */
+    header {
+      margin-top: 56px; /* navbar height offset */
+    }
+
+    .hero-carousel .carousel-item {
+      min-height: 85vh;
+      height: 85vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.55));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #e5e7eb;
+      max-width: 640px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-tag i {
+      margin-right: 0.35rem;
+      color: var(--teal);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: #d1d5db;
+      margin-top: 0.75rem;
+    }
+
+    .hero-meta span {
+      font-size: 0.8rem;
+      color: #c7d2fe;
+      margin-right: 1rem;
+    }
+
+    .btn-pill {
+      border-radius: 999px;
+      padding-inline: 1.6rem;
+      font-weight: 500;
+    }
+
+    .btn-primary-gradient {
+      background: linear-gradient(135deg, var(--primary), var(--teal));
+      border: none;
+      color: #fff;
+    }
+
+    .btn-primary-gradient:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--teal));
+      color: #fff;
+    }
+
+    /* About */
+    .about-card {
+      border-radius: 1.4rem;
+      border: none;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+      background: #ffffff;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 4px solid #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+    }
+
+    .tag-badge {
+      border-radius: 999px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.7rem;
+      margin: 0.15rem;
+    }
+
+    /* Research cards */
+    .research-card {
+      border-radius: 1.2rem;
+      border: none;
+      padding: 1.8rem;
+      background: #ffffff;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.11);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+    }
+
+    .research-card:hover::before {
+      opacity: 1;
+    }
+
+    .research-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    /* Publications */
+    .accordion-item {
+      border-radius: 1rem !important;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+      margin-bottom: 1rem;
+    }
+
+    .accordion-button {
+      font-weight: 600;
+    }
+
+    .publication-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .doi-link {
+      font-size: 0.85rem;
+    }
+
+    /* Gallery */
+    .gallery-carousel .carousel-item {
+      height: 360px;
+    }
+
+    .gallery-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1.4rem;
+    }
+
+    /* Skills */
+    .skill-card {
+      border-radius: 1.2rem;
+      background: #ffffff;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      border: none;
+      padding: 1.8rem;
+      height: 100%;
+    }
+
+    .progress {
+      height: 0.6rem;
+      border-radius: 999px;
+      background: #e5e7eb;
+    }
+
+    .progress-bar {
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--teal));
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 1.7rem;
+      margin-top: 1.5rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0.25rem;
+      bottom: 0.25rem;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--teal));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 0.35rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    }
+
+    .timeline-card {
+      margin-left: 1.8rem;
+      border-radius: 1.1rem;
+      border: none;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+    }
+
+    .timeline-badge {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    /* Awards / Certifications */
+    .pill-list .badge {
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      margin: 0.15rem;
+      font-size: 0.78rem;
+      background: #e5edff;
+      color: #1e3a8a;
+    }
+
+    /* Contact */
+    .contact-card {
+      border-radius: 1.4rem;
+      border: none;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.18);
+      background: linear-gradient(135deg, #ffffff, #eff6ff);
+    }
+
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.6rem;
+      color: var(--primary);
+    }
+
+    .social-links a {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #e5e7eb;
+      color: #111827;
+      margin-right: 0.4rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: linear-gradient(135deg, var(--primary), var(--teal));
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      background: #0f172a;
+      color: #9ca3af;
+    }
+
+    /* Back to top */
+    #backToTop {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.4rem;
+      border-radius: 999px;
+      padding: 0.6rem 0.9rem;
+      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.28);
+      display: none;
+      z-index: 1050;
+    }
+
+    /* Simple scroll animation */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: all 0.6s ease-out;
+    }
+
+    .animate-on-scroll.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 767.98px) {
+      .hero-carousel .carousel-item {
+        min-height: 80vh;
+        height: 80vh;
+      }
+
+      .timeline::before {
+        left: 5px;
+      }
+
+      .timeline-card {
+        margin-left: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        Abigail O. Doku
+        <span>Ph.D. candidate · Cardiovascular & Metabolic Science</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navMenu" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#timeline">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+  <header id="home">
+    <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="7000">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image:url('./images/image_cardiac.jpg');">
+          <div class="hero-overlay"></div>
+          <div class="container h-100 d-flex align-items-center">
+            <div class="hero-content">
+              <div class="hero-tag"><i class="fa-solid fa-heart-pulse"></i> Cardiovascular & Metabolic Science</div>
+              <h1 class="hero-title">From Exercise Physiology to Translational Cardiac Biology</h1>
+              <p class="hero-subtitle">
+                Ph.D. Candidate in Translational Biology, Medicine & Health at Virginia Tech, investigating the role of PERM1 in cardiac contractility and sarcomeric regulation via cMyBP-C.
+              </p>
+              <div class="hero-meta mt-2 mb-3">
+                <span><i class="fa-solid fa-flask-vial me-1"></i> High-resolution imaging · PERM1–cMyBP-C</span>
+                <span><i class="fa-solid fa-graduation-cap me-1"></i> TBMH · Virginia Tech</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#contact" class="btn btn-primary-gradient btn-pill">
+                  <i class="fa-solid fa-envelope-open-text me-1"></i> Contact Me
+                </a>
+                <a href="#publications" class="btn btn-outline-light btn-pill">
+                  <i class="fa-solid fa-book-open me-1"></i> View Publications
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image:url('./images/image_storm.png');">
+          <div class="hero-overlay"></div>
+          <div class="container h-100 d-flex align-items-center">
+            <div class="hero-content">
+              <div class="hero-tag"><i class="fa-solid fa-microscope"></i> Advanced Imaging</div>
+              <h1 class="hero-title">STORM, TEM & Confocal Microscopy of Cardiomyocytes</h1>
+              <p class="hero-subtitle">
+                Developing and applying advanced protocols for structural and functional imaging to interrogate cardiac ultrastructure, mitochondrial dynamics, and metabolic remodeling.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#research" class="btn btn-primary-gradient btn-pill">
+                  <i class="fa-solid fa-diagram-project me-1"></i> Explore Research
+                </a>
+                <a href="#timeline" class="btn btn-outline-light btn-pill">
+                  <i class="fa-solid fa-user-graduate me-1"></i> Academic Journey
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image:url('./images/image_physiology.jpg');">
+          <div class="hero-overlay"></div>
+          <div class="container h-100 d-flex align-items-center">
+            <div class="hero-content">
+              <div class="hero-tag"><i class="fa-solid fa-person-running"></i> Exercise Physiology Roots</div>
+              <h1 class="hero-title">Linking Human Performance to Cardiac Health</h1>
+              <p class="hero-subtitle">
+                Strong foundation in sports and exercise science, human performance assessment, and clinical exercise physiology informs a systems-level approach to cardiovascular research.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#skills" class="btn btn-primary-gradient btn-pill">
+                  <i class="fa-solid fa-gears me-1"></i> Technical Skills
+                </a>
+                <a href="#awards" class="btn btn-outline-light btn-pill">
+                  <i class="fa-solid fa-trophy me-1"></i> Awards & Recognition
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <div class="carousel-indicators mb-4">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section section-alt">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>About</h2>
+        <h3>Translational Cardiovascular & Metabolic Scientist in Training</h3>
+        <div class="divider"></div>
+        <p>
+          Rising third-year Ph.D. candidate in Translational Biology, Medicine & Health (TBMH) at Virginia Tech with a strong background in exercise physiology, cardiovascular biology, and molecular imaging.
+        </p>
+      </div>
+
+      <div class="card about-card p-4 p-md-5 animate-on-scroll">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-4 text-center">
+            <img
+              src="images/imgAbout.jpg"
+              alt="Profile"
+              class="profile-img mb-3"
+            />
+            <h4 class="fw-semibold mb-1">Abigail Oforiwaa Doku</h4>
+            <p class="text-muted mb-2">Ph.D. candidate · TBMH, Virginia Tech</p>
+            <div>
+              <span class="badge bg-primary-subtle text-primary tag-badge">
+                <i class="fa-solid fa-heart-pulse me-1"></i>Cardiovascular Research
+              </span>
+              <span class="badge bg-success-subtle text-success tag-badge">
+                <i class="fa-solid fa-dna me-1"></i>Molecular Biology
+              </span>
+              <span class="badge bg-info-subtle text-info tag-badge">
+                <i class="fa-solid fa-microscope me-1"></i>Advanced Imaging
+              </span>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p>
+              My research explores a novel role of <strong>PERM1</strong> in cardiac contractility via <strong>cMyBP-C</strong> regulation and interaction.
+              At the Warren Lab, I employ high-resolution imaging modalities such as confocal microscopy, STORM, and TEM, alongside robust molecular biology
+              approaches to examine cardiac structure, function, and potential therapeutic strategies for heart failure.
+            </p>
+            <p>
+              My academic journey spans a B.Sc. in Sports and Exercise Science (KNUST, Ghana), an M.Sc. in Exercise Physiology (Central Michigan University),
+              and my current Ph.D. training at Virginia Tech. Across teaching, research, mentorship, and global ambassadorial roles, I remain committed to
+              scientific excellence, cross-cultural collaboration, and impactful community engagement.
+            </p>
+            <div class="mt-3">
+              <span class="badge rounded-pill bg-light text-dark border me-2 mb-2">
+                <i class="fa-solid fa-user-graduate me-1 text-primary"></i>TBMH Ph.D. candidate
+              </span>
+              <span class="badge rounded-pill bg-light text-dark border me-2 mb-2">
+                <i class="fa-solid fa-book me-1 text-primary"></i>Peer-Reviewed Publications
+              </span>
+              <span class="badge rounded-pill bg-light text-dark border me-2 mb-2">
+                <i class="fa-solid fa-award me-1 text-primary"></i>Awards & Fellowships
+              </span>
+              <span class="badge rounded-pill bg-light text-dark border me-2 mb-2">
+                <i class="fa-solid fa-people-group me-1 text-primary"></i>Leadership & Service
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH AREAS -->
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Research Areas</h2>
+        <h3>Integrating Molecular Biology, Imaging, and Physiology</h3>
+        <div class="divider"></div>
+        <p>
+          My work spans cardiac biology, molecular regulation, and exercise physiology, with a focus on mechanistic insights that can translate to improved cardiovascular health.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="research-card h-100">
+            <div class="research-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h5 class="fw-semibold mb-1">Cardiac Contractility, PERM1, & cMyBP-C</h5>
+            <p class="text-muted small mb-0">
+              Investigating how PERM1 regulates cardiac contractility and sarcomeric function through cMyBP-C interaction, integrating imaging,
+              gene delivery, and functional readouts.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="research-card h-100">
+            <div class="research-icon"><i class="fa-solid fa-dna"></i></div>
+            <h5 class="fw-semibold mb-1">Molecular Biology & Gene Delivery</h5>
+            <p class="text-muted small mb-0">
+              Applying AAV-mediated gene delivery, qPCR, genotyping, and molecular assays to dissect cardiac signaling pathways and metabolic regulation.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="research-card h-100">
+            <div class="research-icon"><i class="fa-solid fa-microscope"></i></div>
+            <h5 class="fw-semibold mb-1">Advanced High-Resolution Imaging</h5>
+            <p class="text-muted small mb-0">
+              Developing protocols for confocal, STORM, and TEM imaging of cardiomyocytes, enabling quantitative assessment of ultrastructure and remodeling.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="research-card h-100">
+            <div class="research-icon"><i class="fa-solid fa-person-running"></i></div>
+            <h5 class="fw-semibold mb-1">Exercise Physiology & Human Performance</h5>
+            <p class="text-muted small mb-0">
+              Examining how exercise training, cardiovascular responses, and metabolic adaptations influence functional outcomes and verbal memory.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="research-card h-100">
+            <div class="research-icon"><i class="fa-solid fa-flask-vial"></i></div>
+            <h5 class="fw-semibold mb-1">Metabolic & Mitochondrial Adaptations</h5>
+            <p class="text-muted small mb-0">
+              Studying PERM1-driven changes in mitochondrial biogenesis, energetics, and structural adaptation in cardiac tissue.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="research-card h-100">
+            <div class="research-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h5 class="fw-semibold mb-1">Quantitative Analysis & Data Integration</h5>
+            <p class="text-muted small mb-0">
+              Leveraging ImageJ, Python, R, and MATLAB for image analysis, physiological data interpretation, and integrative translational insights.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section section-alt">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Publications</h2>
+        <h3>Selected Peer-Reviewed Articles</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="accordion animate-on-scroll" id="pubAccordion">
+
+        <!-- Pub 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="pub1Heading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pub1" aria-expanded="true">
+              Adeno-Associated Virus Mediated Gene Delivery of PERM1 Enhances Cardiac Contractility in Mice (2024)
+            </button>
+          </h2>
+          <div id="pub1" class="accordion-collapse collapse show" aria-labelledby="pub1Heading" data-bs-parent="#pubAccordion">
+            <div class="accordion-body">
+              <p class="publication-meta mb-2">
+                <strong>Sreedevi K</strong>, <strong>Zaitsev AV</strong>, <strong>Doku A</strong>, Thomas R, James A, Do S, Zhang M, Sedovy MW,
+                Leng X, Dennison CL, Johnstone SR, Kirk JA, Yan Z, Warren JS. <br>
+                <em>Am J Physiol Heart Circ Physiol</em>, 2024.
+              </p>
+              <p class="mb-2 small">
+                Demonstrates that AAV-mediated PERM1 overexpression improves cardiac contractility and supports mitochondrial adaptations,
+                providing mechanistic insight into PERM1 as a therapeutic target for heart failure.
+              </p>
+              <a href="#" class="doi-link text-primary">
+                <i class="fa-solid fa-link me-1"></i> DOI: 10.1152/ajpheart.00545.2024
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pub 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="pub2Heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pub2" aria-expanded="false">
+              PERM1 Enhances Cardiac Contractility and Mitochondrial Biogenesis in Mice (2024, Circulation Research)
+            </button>
+          </h2>
+          <div id="pub2" class="accordion-collapse collapse" aria-labelledby="pub2Heading" data-bs-parent="#pubAccordion">
+            <div class="accordion-body">
+              <p class="publication-meta mb-2">
+                <strong>Sreedevi K</strong>, <strong>Doku A O</strong>, James A, Do S, Zaitsev A, Warren J. <br>
+                <em>Circulation Research</em>, 2024 (conference abstract).
+              </p>
+              <p class="mb-0 small">
+                Highlights the dual effect of PERM1 on contractility and mitochondrial biogenesis, linking sarcomeric and metabolic remodeling
+                in the heart.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pub 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="pub3Heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pub3">
+              Verbal Memory is Higher After Aerobic Exercise vs Muscle Stretching (2025)
+            </button>
+          </h2>
+          <div id="pub3" class="accordion-collapse collapse" aria-labelledby="pub3Heading" data-bs-parent="#pubAccordion">
+            <div class="accordion-body">
+              <p class="publication-meta mb-2">
+                <strong>Doku A</strong>, Roupe G, Rankine E, Flemming I, Provost J, Zuhl M, Otani H. <br>
+                <em>American Journal of Lifestyle Medicine</em>, 2025.
+              </p>
+              <p class="small mb-0">
+                Demonstrates that aerobic exercise yields higher verbal memory performance than muscle stretching, emphasizing the cognitive
+                benefits of cardiovascular-focused physical activity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pub 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="pub4Heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pub4">
+              Physiological & Anthropometric Responses of Bankers to Fitness Training (2019)
+            </button>
+          </h2>
+          <div id="pub4" class="accordion-collapse collapse" aria-labelledby="pub4Heading" data-bs-parent="#pubAccordion">
+            <div class="accordion-body">
+              <p class="publication-meta mb-2">
+                <strong>Doku A O</strong>, Moses M O, Acheampong I K, et al. <br>
+                <em>Journal of Exercise Rehabilitation</em>, 2019.
+              </p>
+              <p class="small mb-1">
+                Evaluates training-induced changes in physiological, anthropometric, and balance parameters in healthy bankers following structured fitness programs.
+              </p>
+              <a href="https://doi.org/10.12965/jer.1836572.286" class="doi-link text-primary" target="_blank">
+                <i class="fa-solid fa-link me-1"></i>https://doi.org/10.12965/jer.1836572.286
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pub 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="pub5Heading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pub5">
+              Training-Induced Changes in Weightlifting Athletes (2022)
+            </button>
+          </h2>
+          <div id="pub5" class="accordion-collapse collapse" aria-labelledby="pub5Heading" data-bs-parent="#pubAccordion">
+            <div class="accordion-body">
+              <p class="publication-meta mb-2">
+                Deku P D, Annani-Akollor M E, Moses M O, <strong>Doku A O</strong>, et al. <br>
+                <em>Journal of Applied Sciences and Clinical Practice</em>, 2022.
+              </p>
+              <p class="small mb-1">
+                Explores long-term biochemical, physiological, and anthropometric adaptations associated with years of weightlifting training.
+              </p>
+              <a href="https://www.jascp.org/article.asp?issn=2772-364X;year=2022;volume=3;issue=3;spage=80;epage=86;aulast=Deku;type=0"
+                 target="_blank"
+                 class="doi-link text-primary">
+                <i class="fa-solid fa-link me-1"></i>Journal Link
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LAB LIFE / GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Lab Life</h2>
+        <h3>Inside the Imaging Suite & Research Environment</h3>
+        <div class="divider"></div>
+        <p>
+          A glimpse into daily lab work—from sterile tissue prep and microscopy to data analysis, mentoring, and scientific presentations.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10 animate-on-scroll">
+          <div id="labCarousel" class="carousel slide gallery-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <img src="./images/img1.jpg" class="d-block w-100" alt="Microscopy" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>High-Resolution Imaging</h5>
+                  <p>Confocal, STORM, and TEM imaging of cardiomyocytes and cardiac tissue.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="./images/img1.jpg" class="d-block w-100" alt="Cell Culture" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Wet Lab & Tissue Processing</h5>
+                  <p>Animal models, tissue harvesting, and preparation for structural and molecular analysis.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="./images/img1.jpg" class="d-block w-100" alt="Team" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Collaborative Research Culture</h5>
+                  <p>Interdisciplinary teamwork across physiology, molecular biology, and engineering.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="./images/img3.jpg" class="d-block w-100" alt="Conference" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Scientific Communication</h5>
+                  <p>Posters, oral presentations, and ePosters at national and international conferences.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#labCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#labCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+            <div class="carousel-indicators mt-3">
+              <button type="button" data-bs-target="#labCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#labCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#labCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#labCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Skills</h2>
+        <h3>Technical Toolkit for Modern Cardiovascular Research</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Molecular & Lab Skills -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="skill-card">
+            <h5 class="mb-3"><i class="fa-solid fa-dna me-2 text-primary"></i>Molecular Biology Techniques</h5>
+            <p class="small text-muted">
+              PCR, qPCR, genotyping, gene cloning, DNA/RNA extraction, Western blotting, and molecular safety best practices.
+            </p>
+            <label class="small fw-semibold">PCR / qPCR</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:90%"></div></div>
+            <label class="small fw-semibold">Genotyping & Cloning</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:85%"></div></div>
+            <label class="small fw-semibold">DNA/RNA Extraction</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:88%"></div></div>
+          </div>
+        </div>
+
+        <!-- Imaging -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="skill-card">
+            <h5 class="mb-3"><i class="fa-solid fa-microscope me-2 text-primary"></i>Imaging & Microscopy</h5>
+            <p class="small text-muted">
+              Confocal imaging up to 100 µm depth, STORM, TEM, and quantitative image analysis of cardiomyocytes and tissue.
+            </p>
+            <label class="small fw-semibold">Confocal Microscopy</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:95%"></div></div>
+            <label class="small fw-semibold">STORM</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:80%"></div></div>
+            <label class="small fw-semibold">TEM</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:78%"></div></div>
+          </div>
+        </div>
+
+        <!-- Exercise & Data -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="skill-card">
+            <h5 class="mb-3"><i class="fa-solid fa-person-running me-2 text-primary"></i>Exercise Physiology & Data Analysis</h5>
+            <p class="small text-muted">
+              Stress testing, ECG preparation and interpretation, blood pressure and HR monitoring, and quantitative data analysis.
+            </p>
+            <label class="small fw-semibold">Exercise Testing & ECG</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:90%"></div></div>
+            <label class="small fw-semibold">Python / DataCamp Foundations</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:75%"></div></div>
+            <label class="small fw-semibold">Scientific Communication</label>
+            <div class="progress mb-2"><div class="progress-bar" style="width:92%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION TIMELINE -->
+  <section id="timeline" class="section">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Experience</h2>
+        <h3>Education & Professional Journey</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="timeline">
+
+            <!-- PhD -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div class="card timeline-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="timeline-badge"><i class="fa-solid fa-user-graduate me-1"></i> Ph.D.</span>
+                    <span class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>2024 – 2027 (Expected)</span>
+                  </div>
+                  <h5 class="card-title mb-1">Ph.D. in Translational Biology, Medicine & Health</h5>
+                  <p class="small text-muted mb-2">Virginia Tech · Roanoke, VA, USA</p>
+                  <p class="small mb-0">
+                    Focus on cardiovascular and metabolic science, PERM1–cMyBP-C regulation, and translational imaging approaches in cardiac biology.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Warren Lab -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div class="card timeline-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="timeline-badge"><i class="fa-solid fa-flask-vial me-1"></i> Research</span>
+                    <span class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>Jan 2024 – Present</span>
+                  </div>
+                  <h5 class="card-title mb-1">Graduate Research Assistant – Warren Lab</h5>
+                  <p class="small text-muted mb-2">Fralin Biomedical Research Institute at VTC</p>
+                  <p class="small mb-0">
+                    Conceptualizes and executes experiments on PERM1 in cardiac physiology; develops protocols for confocal, STORM, and TEM imaging;
+                    manages animal models; performs tissue harvesting, gene expression analysis, and echocardiography data interpretation.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Yan Lab -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div class="card timeline-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="timeline-badge"><i class="fa-solid fa-dna me-1"></i> Research</span>
+                    <span class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>May 2023 – Aug 2023</span>
+                  </div>
+                  <h5 class="card-title mb-1">Research Assistant – Yan Lab</h5>
+                  <p class="small text-muted mb-2">Fralin Biomedical Research Institute at VTC</p>
+                  <p class="small mb-0">
+                    Gained expertise in PCR, genotyping, gene cloning, and animal model use in exercise and molecular research, including monitoring,
+                    data collection, and analysis.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- MSc -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div class="card timeline-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="timeline-badge"><i class="fa-solid fa-user-graduate me-1"></i> MSc</span>
+                    <span class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>2021 – 2023</span>
+                  </div>
+                  <h5 class="card-title mb-1">M.Sc. in Exercise Physiology</h5>
+                  <p class="small text-muted mb-2">Central Michigan University · Mount Pleasant, MI, USA</p>
+                  <p class="small mb-0">
+                    Combined advanced coursework with research on exercise physiology, cognitive function, and cardiometabolic adaptation.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- GA Anatomy -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div class="card timeline-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="timeline-badge"><i class="fa-solid fa-chalkboard-user me-1"></i> Teaching</span>
+                    <span class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>Aug 2021 – Apr 2023</span>
+                  </div>
+                  <h5 class="card-title mb-1">Graduate Assistant in Anatomy</h5>
+                  <p class="small text-muted mb-2">Central Michigan University</p>
+                  <p class="small mb-0">
+                    Taught human anatomy labs using cadavers and models; developed course materials, quizzes, and exams; maintained a high-standard learning environment.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BSc -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div class="card timeline-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="timeline-badge"><i class="fa-solid fa-user-graduate me-1"></i> BSc</span>
+                    <span class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>2014 – 2018</span>
+                  </div>
+                  <h5 class="card-title mb-1">B.Sc. in Sports and Exercise Science</h5>
+                  <p class="small text-muted mb-2">KNUST · Kumasi, Ghana</p>
+                  <p class="small mb-0">
+                    Built a strong foundation in exercise science, biomechanics, and human performance, alongside leadership as Class President and association organizer.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Condensed earlier roles -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div class="card timeline-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="timeline-badge"><i class="fa-solid fa-briefcase me-1"></i> Early Roles</span>
+                    <span class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>2013 – 2021</span>
+                  </div>
+                  <h5 class="card-title mb-1">Teaching, Clinical, and Leadership Experiences</h5>
+                  <p class="small mb-0">
+                    Includes private exercise therapy, exercise science internships (hospital & fitness center), teaching and research assistantships at KNUST,
+                    administrative roles at Swim Africa Ghana, and multiple leadership positions fostering community health, safety, and student engagement.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- timeline -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS & COMMUNITY -->
+  <section id="awards" class="section section-alt">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Awards</h2>
+        <h3>Recognition & Community Engagement</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6 animate-on-scroll">
+          <h5 class="mb-3"><i class="fa-solid fa-trophy me-2 text-primary"></i>Key Awards & Honors</h5>
+          <ul class="list-group shadow-sm">
+            <li class="list-group-item small">AHA BCVS Travel Grant (Nov 2025)</li>
+            <li class="list-group-item small">TBMH Student of the Year 2025 – Education Pillar (May 2025)</li>
+            <li class="list-group-item small">Gaskins Exercise Graduate Fellowship, FBRI (July 2024)</li>
+            <li class="list-group-item small">Featured in Virginia Tech News (Jan 2025)</li>
+            <li class="list-group-item small">Best Student – 2018 Academic Excellence Awards, Faculty of Allied Health Sciences, KNUST</li>
+            <li class="list-group-item small">Certificate of Honor – Peer Counsellors, KNUST Counselling Centre (2017/2018)</li>
+            <li class="list-group-item small">Certificate of Appreciation – Organizing Secretary, Dept. of Sports & Exercise Science, KNUST</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6 animate-on-scroll">
+          <h5 class="mb-3"><i class="fa-solid fa-hand-holding-heart me-2 text-primary"></i>Service & Outreach</h5>
+          <div class="pill-list mb-2">
+            <span class="badge">Ut Prosim Speaker – VT Graduate Representative (2025)</span>
+            <span class="badge">ISHR Lecture at FBRI (2025)</span>
+            <span class="badge">FBRI Summer Symposium Poster Judge (2024)</span>
+            <span class="badge">Governor School Volunteer (2024)</span>
+            <span class="badge">AHA Volunteer – STEM Goes Red (2024)</span>
+            <span class="badge">American Red Cross – Fire Department CPR Training Volunteer (2024)</span>
+            <span class="badge">Roanoke Science Fair Judge (2024)</span>
+          </div>
+          <p class="small text-muted mb-0">
+            These roles reflect a sustained commitment to mentorship, community education, and promoting cardiovascular and health science literacy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & TRAINING -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Training</h2>
+        <h3>Certifications & Professional Development</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6 animate-on-scroll">
+          <h5 class="mb-3"><i class="fa-solid fa-id-badge me-2 text-primary"></i>Key Certifications</h5>
+          <ul class="list-group shadow-sm small">
+            <li class="list-group-item">Certified Exercise Physiologist – American College of Sports Medicine (July 2022)</li>
+            <li class="list-group-item">Adult and Pediatric First Aid/CPR/AED – American Red Cross (March 2022)</li>
+            <li class="list-group-item">Biomedical Research – CITI Program (Oct 2021)</li>
+            <li class="list-group-item">Physiotherapy Training and Treatment Program – Ghana (2019)</li>
+            <li class="list-group-item">St John Ambulance – LIFE SAVERS Course: Sporting Injuries (2016)</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 animate-on-scroll">
+          <h5 class="mb-3"><i class="fa-solid fa-graduation-cap me-2 text-primary"></i>Short Courses & Workshops</h5>
+          <ul class="list-group shadow-sm small">
+            <li class="list-group-item">How To Peer Review a Review Article – Elsevier Researcher Academy (June 2022)</li>
+            <li class="list-group-item">Introduction to Python – DataCamp (May 2022)</li>
+            <li class="list-group-item">Multi-Modal Teaching Methods – Office of Curriculum & Instructional Support, CMU (Jan 2022)</li>
+            <li class="list-group-item">
+              Transforming Leadership & Governance Seminar – International Leadership Foundation & University (2016–2017)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-heading animate-on-scroll">
+        <h2>Contact</h2>
+        <h3>Let’s Talk Science, Collaboration, and Impact</h3>
+        <div class="divider"></div>
+        <p>
+          I welcome conversations around collaborations, fellowships, speaking opportunities, and translational projects in cardiovascular and metabolic science.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7 animate-on-scroll">
+          <div class="contact-card p-4 p-md-5">
+            <h5 class="mb-3"><i class="fa-solid fa-paper-plane me-2 text-primary"></i>Send a Message</h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label small">Name</label>
+                <input type="text" class="form-control" placeholder="Your full name" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label small">Email</label>
+                <input type="email" class="form-control" placeholder="name@example.com" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label small">Message</label>
+                <textarea rows="5" class="form-control" placeholder="How can we collaborate?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary-gradient btn-pill">
+                <i class="fa-solid fa-paper-plane-top me-1"></i> Submit
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-5 animate-on-scroll">
+          <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body p-4 p-md-4">
+              <h5 class="mb-3"><i class="fa-solid fa-address-card me-2 text-primary"></i>Contact Details</h5>
+
+              <div class="d-flex align-items-start mb-3">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <p class="mb-1 fw-semibold small">Email</p>
+                  
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start mb-3">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <p class="mb-1 fw-semibold small">Location</p>
+                  <p class="mb-0 small text-muted">
+                    <br />
+                    Virginia, USA
+                  </p>
+                </div>
+              </div>
+
+              <hr class="my-3" />
+
+              <p class="fw-semibold small mb-2">Profiles</p>
+              <div class="social-links mb-3">
+                <a href="https://www.linkedin.com/in/abigail-oforiwaa-doku-ms-acsm-ep" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://scholar.google.com/citations?hl=en&user=JhawSAMAAAAJ" aria-label="Google Scholar"><i class="fa-brands fa-google"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              </div>
+
+              <p class="fw-semibold small mb-2">Institute Location</p>
+              <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                <iframe
+                  src="https://maps.google.com/maps?q=Roanoke%20Virginia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  style="border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <p class="mb-2 mb-md-0 small">
+        © <span id="currentYear"></span> Abigail Oforiwaa Doku · Cardiovascular & Metabolic Research
+      </p>
+      <div class="d-flex align-items-center small">
+        <span class="me-2">Connect:</span>
+        <a href="#" class="me-2 text-decoration-none text-muted"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="me-2 text-decoration-none text-muted"><i class="fa-brands fa-google"></i></a>
+        <a href="#" class="text-decoration-none text-muted"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="btn btn-primary-gradient btn-sm" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    // Back to top visibility
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 250) {
+        backToTopBtn.style.display = "inline-flex";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    });
+    backToTopBtn.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    );
+
+    // Simple scroll animations
+    const animatedEls = document.querySelectorAll(".animate-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    animatedEls.forEach((el) => observer.observe(el));
+
+    // Current year in footer
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
